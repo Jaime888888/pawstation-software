@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "PawStation",
+    "slug": "pawstation-mobile-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "PawStation uses your local network to connect to the feeder and camera module.",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      }
+    },
+    "android": {
+      "usesCleartextTraffic": true,
+      "permissions": [
+        "INTERNET"
+      ]
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
