@@ -1,4 +1,6 @@
 venv/
+.venv/
 __pycache__/
 *.pyc
 config.json
+mobile-app/node_modules/

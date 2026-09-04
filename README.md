@@ -1,5 +1,7 @@
 # PawStation
 
+[![CI](https://github.com/Jaime888888/pawstation-software/actions/workflows/ci.yml/badge.svg)](https://github.com/Jaime888888/pawstation-software/actions/workflows/ci.yml)
+
 Desktop and mobile control clients for a Raspberry Pi smart pet feeder. PawStation connects to the feeder over a local REST API, presents live device telemetry, manages feeding settings, supports manual dispensing, visualizes history, and exposes the feeder's camera stream.
 
 ## What it does
@@ -76,7 +78,7 @@ Enter the Raspberry Pi's local IP address in the application and connect.
 
 ```bash
 cd mobile-app
-npm install
+npm ci
 npx expo start
 ```
 
@@ -95,6 +97,14 @@ Open the project in Expo Go or an emulator. The phone and Raspberry Pi must be c
 - Both clients distinguish connected, reconnecting, and offline states.
 - Manual feeding is disabled when the feeder reports `motor_on: true`.
 - Mobile settings are validated before submission and stored between sessions.
+
+## Tests
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The test suite checks configuration persistence, request construction, timeout handling, and input validation without requiring feeder hardware. CI also validates the Expo configuration.
 
 ## Production considerations
 
